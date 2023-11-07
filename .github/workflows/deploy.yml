@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy:
+    name: Copy files from main branch and paste to public branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Set up
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+        shell: bash
+      - name: files to public folder
+        run: |
+          mkdir -p public
+          cp index.html public/
+          cp styles.css public/
+          cp index.js public/
+        shell: bash
+      - name: Create or update the public branch
+        run: |
+          branch_name="public"
+          
+          # Check if the branch exists
+          if ! git rev-parse --verify --quiet "refs/heads/$branch_name"; then
+              # Create a new empty branch
+              git switch --orphan "$branch_name"
+          else
+              echo "Branch $branch_name already exists."
+          fi
+          # Create a new empty branch with the same name
+          git switch --orphan "$branch_name"
+          git add public/
+          git commit -m "files for deployment"
+          git push origin "$branch_name" -f
+        shell: bash

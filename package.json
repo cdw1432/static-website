@@ -1,0 +1,22 @@
+{
+  "name": "static-website",
+  "version": "1.0.0",
+  "description": "personal website using GitHub Pages",
+  "main": "index.js",
+  "scripts": {
+    "live":"live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdw1432/static-website.git"
+  },
+  "author": "Woojin Choi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdw1432/static-website/issues"
+  },
+  "homepage": "https://github.com/cdw1432/static-website#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

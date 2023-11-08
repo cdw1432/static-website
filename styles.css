@@ -4,12 +4,17 @@ body {
     padding: 0px;
     font-size: 22px;
     color: #242323;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(246,238,227);
 }
 div {
     margin: 0;
     padding: 0;
     display: block;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 ::selection {
@@ -24,7 +29,7 @@ div {
 #left-border, #right-border {
     top: 0;
     bottom: 0;
-    width: 20px;
+    width: 15px;
 }
 #left-border {
     left: 0;
@@ -35,7 +40,7 @@ div {
 #top-border, #bottom-border {
     left: 0;
     right: 0;
-    height: 20px;
+    height: 15px;
 }
 #top-border {
     top: 0;
@@ -49,13 +54,16 @@ div {
     max-width: 1000px;
     padding: 50px 50px 50px 50px; /* top, right, bottom, left */
     margin: auto;
-    
+    align-content: center;
 }
 
 /* TOP */
 #top {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     /* border: solid; */
+}
+#logo {
+    max-width:100px;height:auto;
 }
 header {
     padding: 5px;
@@ -72,16 +80,22 @@ nav a {
     color: #333;
     border: none;
 }
-#nav1 {
-    margin-right: 100px;
+#nav2 {
+    margin-right: 5%;
+    margin-left: 5%;
 }
 #nav3 {
-    margin-left: 100px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+#nav4 {
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 
 
-#line {
+.line-nav, .line-footer {
     border-bottom: solid rgba(32, 32, 32, 0.2) 2px;
     }
 /* CONTENT */
@@ -111,3 +125,28 @@ footer h3 {
     font-size: 20px;
     text-align: center;
 }
+
+@media only screen and (max-width: 800px) {
+    body {
+      background-color: lightblue;
+    }
+    .line-nav  {
+        display: none;
+    }
+    nav {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #333;
+        border: none;
+        padding: 0;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    #navItems {
+        display: block;
+    }
+  }

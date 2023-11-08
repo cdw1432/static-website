@@ -3,8 +3,8 @@ body {
     margin: 0px;
     padding: 0px;
     font-size: 22px;
-    color: #333333;
-    background-color: #fcfdf4;
+    color: #242323;
+    background-color: rgb(247, 247, 247);
 }
 div {
     margin: 0;
@@ -12,9 +12,12 @@ div {
     display: block;
 }
 
+::selection {
+    background: rgb(252, 255, 199);
+}
 /* Borders */
 #top-border, #bottom-border, #left-border, #right-border {
-    background: rgb(34, 12, 65);
+    background: rgb(41, 6, 58);
     position: fixed;
     z-index: 100;
 }
@@ -52,28 +55,39 @@ div {
 /* TOP */
 #top {
     margin-bottom: 30px;
-    border: solid;
+    /* border: solid; */
 }
 header {
     padding: 5px;
 }
 nav {
     text-transform: uppercase;
-    letter-spacing: 3px;
-    padding: 0px 0px;
-    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 3px 3px;
+    font-size: 15px;
+    text-align: center;
 }
 nav a {
     text-decoration: none;
     color: #333;
     border: none;
 }
+#nav1 {
+    margin-right: 100px;
+}
+#nav3 {
+    margin-left: 100px;
+}
 
+
+
+#line {
+    border-bottom: solid rgba(32, 32, 32, 0.2) 2px;
+    }
 /* CONTENT */
 #content {
     overflow-x: hidden;
     clear: both;
-    border: solid;
     margin-bottom: 30px;
 }
 #main {
@@ -83,7 +97,6 @@ nav a {
 
 /* BOTTOM */
 #bottom {
-    border: solid;
     margin-bottom: 30px;
 }
 footer {
@@ -97,5 +110,4 @@ footer a {
 footer h3 {
     font-size: 20px;
     text-align: center;
-    margin-bottom: 80px;
 }

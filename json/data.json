@@ -1,0 +1,24 @@
+{
+    "kr": {
+        "icon" : "<img src='https://emoji.beeimg.com/🇰🇷/apple' alt='🇰🇷'></img>",
+        "about" : "안녕하세요. 대학교 2학년 학생입니다. 빨리 집가서 bbq치킨이나 페리카나 치킨이나 떡볶이나... 아 배고파 ㅜ",
+        "links" : {
+            "인스타그램": ["https://www.instagram.com/c6791432/", 1],
+            "미디엄": ["https://medium.com/@cdw1432m", 2],
+            "깃허브": ["https://github.com/cdw1432", 3],
+            "디스코드": ["https://discord.gg/pxsnKw6Q", 4],
+            "유튜브": ["https://www.youtube.com/channel/UC1KUz5HbE_b7aaudwfXXNiQ", 5]
+        }
+    },
+    "en": {
+        "icon" : "<img src='https://emoji.beeimg.com/🌐/apple' alt='🌐'></img>",
+        "about": "Hello. I am a second-year university student. I can't wait to go home and have some BBQ chicken, Pericana chicken, tteokbokki... Oh, I'm hungry!",
+        "links" : {
+            "INSTAGRAM": ["https://www.instagram.com/c6791432/", 1],
+            "MEDIUM": ["https://medium.com/@cdw1432m", 2],
+            "GITHUB": ["https://github.com/cdw1432", 3],
+            "DISCORD": ["https://discord.gg/pxsnKw6Q", 4],
+            "YOUTUBE": ["https://www.youtube.com/channel/UC1KUz5HbE_b7aaudwfXXNiQ", 5]
+        }
+    }
+}

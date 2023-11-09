@@ -62,9 +62,6 @@ ul {
     margin-bottom: 20px;
     /* border: solid; */
 }
-#logo {
-    max-width:100px;height:auto;
-}
 header {
     padding: 5px;
 }
@@ -127,9 +124,6 @@ footer h3 {
 }
 
 @media only screen and (max-width: 800px) {
-    body {
-      background-color: lightblue;
-    }
     .line-nav  {
         display: none;
     }
@@ -150,3 +144,36 @@ footer h3 {
         display: block;
     }
   }
+
+  #language {
+    display: inline-block;
+    padding: 4px 5px;
+    font-size: 16px;
+    background-color: rgb(246,238,227);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  #language > img {
+    width: 15px;
+  }
+  
+  #language:hover {
+    background: rgb(41, 6, 58);
+  }
+  
+  #language:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #license {
+    color: #777;
+    opacity: 0.8;
+    font-size: 12px; 
+    text-decoration: none; 
+  }
+
+#aboutme {
+    font-size: 20px;
+}

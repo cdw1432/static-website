@@ -16,7 +16,6 @@ ul {
     padding: 0;
     margin: 0;
 }
-
 ::selection {
     background: rgb(252, 255, 199);
 }
@@ -48,19 +47,19 @@ ul {
 #bottom-border {
     bottom: 0;
 }
-
 /* PAGE */
 #page {
     max-width: 1000px;
-    padding: 50px 50px 50px 50px; /* top, right, bottom, left */
+    padding: 50px 50px 50px 50px;
+   /* top, right, bottom, left */
     margin: auto;
     align-content: center;
 }
-
 /* TOP */
 #top {
     margin-bottom: 20px;
-    /* border: solid; */
+   /* border: solid;
+    */
 }
 header {
     padding: 5px;
@@ -89,12 +88,9 @@ nav a {
     margin-right: 5%;
     margin-left: 5%;
 }
-
-
-
 .line-nav, .line-footer {
     border-bottom: solid rgba(32, 32, 32, 0.2) 2px;
-    }
+}
 /* CONTENT */
 #content {
     overflow-x: hidden;
@@ -105,14 +101,12 @@ nav a {
     font-size: medium;
     padding: 5px;
 }
-
 /* BOTTOM */
 #bottom {
     margin-bottom: 30px;
 }
 footer {
     text-align: center;
-   
 }
 footer a {
     text-decoration: none;
@@ -122,16 +116,16 @@ footer h3 {
     font-size: 20px;
     text-align: center;
 }
-
+/* less than 800px */
 @media only screen and (max-width: 800px) {
-    .line-nav  {
+    .line-nav {
         display: none;
-    }
+   }
     nav {
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 15px;
-    }
+   }
     nav a {
         text-decoration: none;
         color: #333;
@@ -139,13 +133,12 @@ footer h3 {
         padding: 0;
         margin-top: 10px;
         display: inline-block;
-    }
+   }
     #navItems {
         display: block;
-    }
-  }
-
-  #language {
+   }
+}
+#language {
     display: inline-block;
     padding: 4px 5px;
     font-size: 16px;
@@ -154,31 +147,24 @@ footer h3 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  #language > img {
+}
+#language > img {
     width: 15px;
-  }
-  
-  #language:hover {
+}
+#language:hover {
     background: rgb(41, 6, 58);
-  }
-  
-  #language:active {
+}
+#language:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  #license {
+}
+#license {
     color: #777;
     opacity: 0.8;
-    font-size: 12px; 
-    text-decoration: none; 
-  }
-
+    font-size: 12px;
+    text-decoration: none;
+}
 #aboutme {
     font-size: 25px;
-}
-#postslist {
-    display: block;
 }
 #postslist > li {
     margin-top: 10px;
@@ -188,14 +174,12 @@ footer h3 {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-
     max-width: 333px;
     min-height: 100px;
     min-height: 100px;
-
 }
-#postslist >li > #post-tags {
-    padding:  2px;
+.post-tags {
+    padding: 2px;
     margin: 3px;
     font-size: 13px;
     display: inline-block;
@@ -210,14 +194,13 @@ footer h3 {
 }
 #postslist > li > a {
     font-size: 20px;
-    text-decoration: none; 
+    text-decoration: none;
     color: #000000;
     padding: 12px 0 12px 0;
 }
 #postslist > li > a:hover {
     text-decoration: underline;
 }
-
 #moreblog {
     background-color: rgb(246,238,227);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -227,10 +210,77 @@ footer h3 {
     border-radius: 3px;
     cursor: pointer;
 }
-
 #moreblog > a {
     font-size: 15px;
-    text-decoration: none; 
-    color: #000000;
+    text-decoration: none;
+    color: #575555;
     padding: 10px 0 10px 0;
+}
+#repos, #posts {
+    display: inline-block;
+    vertical-align: top;
+}
+#repos {
+    float: right;
+    max-width: 50%;
+}
+/* less than 800px */
+@media only screen and (max-width: 800px) {
+    #repos {
+        float: left;
+        max-width: 100%;
+   }
+    #posts {
+        max-width: 100%;
+   }
+}
+#morerepos > a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #575555;
+    padding: 10px 0 10px 0;
+}
+#reposlist > li {
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
+    background-color: rgb(246,238,227);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 333px;
+    min-height: 100px;
+    min-height: 100px;
+}
+#post-date {
+    color: #5f5f5f;
+}
+#reposlist > li > a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+    padding: 12px 0 12px 0;
+}
+#reposlist > li > a:hover {
+    text-decoration: underline;
+}
+#morerepos {
+    background-color: rgb(246,238,227);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #727171;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.repos-tags {
+    padding: 2px;
+    margin-top: 5px;
+    font-size: 17px;
+    display: inline-block;
+    background-color: #dbdbdb;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #727171;
 }

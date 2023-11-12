@@ -2,8 +2,9 @@
     "kr": {
         "icon" : "<img src='https://emoji.beeimg.com/🇰🇷/apple' alt='🇰🇷'></img>",
         "header2": "소개",
-        "header3": "최근 블로그 글:",
-        "about" : "안녕하세요. 대학교 2학년 학생입니다. 지금 2시반... 방에 과자가 다 떨어졌다.. 너무 배고프다. 치킨이 너무 먹고싶다. 고기가 먹고싶다니럴ㄹㄴ아ㅣ러",
+        "header3": "📮최근 블로그 글:",
+        "header4": "⏳여가시간에 하는 거: ",
+        "about" : "👋안녕하세요. 현재 대햑교 2학년 학생입니다. 관심있는거: 서버리스/클라우드, 오픈소스, go, js/ts, DBMS",
         "links" : {
             "인스타그램": ["https://www.instagram.com/c6791432/", 1],
             "미디엄": ["https://medium.com/@cdw1432m", 2],
@@ -18,8 +19,9 @@
     "en": {
         "icon" : "<img src='https://emoji.beeimg.com/🌐/apple' alt='🌐'></img>",
         "header2": "about",
-        "header3": "recent blog posts in korean: ",
-        "about": "Hello. I am a second-year university student. It's currently 2:30... I ran out of snacks in my room. I'm so hungry. I really crave chicken. I want to eat meat.asdfksfhsjk",
+        "header3": "📮recent blog posts(korean): ",
+        "header4": "⏳things I do or did during my spare time: ",
+        "about": "👋Hello. I am a second-year university student. I'm interested in serverless/cloud, open source, Go, JavaScript/TypeScript, and DBMS.",
         "links" : {
             "INSTAGRAM": ["https://www.instagram.com/c6791432/", 1],
             "MEDIUM": ["https://medium.com/@cdw1432m", 2],

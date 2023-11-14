@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 /* Global */
 body {
     margin: 0px;
@@ -6,6 +7,7 @@ body {
     color: #242323;
     background-color: rgb(246,238,227);
 }
+
 div {
     margin: 0;
     padding: 0;
@@ -165,6 +167,7 @@ footer h3 {
 }
 #aboutme {
     font-size: 25px;
+    text-align: center;
 }
 #postslist > li {
     margin-top: 10px;
@@ -177,6 +180,10 @@ footer h3 {
     max-width: 333px;
     min-height: 100px;
     min-height: 100px;
+}
+#postslist > li > a {
+    font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
 }
 .post-tags {
     padding: 2px;
@@ -234,6 +241,9 @@ footer h3 {
         max-width: 100%;
    }
 }
+#morerepos {
+    margin-right:110px;
+}
 #morerepos > a {
     font-size: 15px;
     text-decoration: none;
@@ -256,10 +266,12 @@ footer h3 {
     color: #5f5f5f;
 }
 #reposlist > li > a {
+    font-family: 'Nanum Myeongjo', serif;
     font-size: 20px;
     text-decoration: none;
     color: #000000;
     padding: 12px 0 12px 0;
+    font-weight: bold;
 }
 #reposlist > li > a:hover {
     text-decoration: underline;
@@ -273,7 +285,7 @@ footer h3 {
     border-radius: 3px;
     cursor: pointer;
 }
-.repos-tags {
+.repos-tags > a {
     padding: 2px;
     margin-top: 5px;
     font-size: 17px;
@@ -283,4 +295,31 @@ footer h3 {
     cursor: pointer;
     text-decoration: none;
     color: #727171;
+}
+/* REPO Language */
+.lang-circle.Go{
+    height: 10px;
+    width: 10px;
+    background-color: #00ADD8;
+    filter: brightness(85%);
+    border-radius: 50%;
+    float:right;
+
+}
+.lang-circle.JavaScript{
+    height: 10px;
+    width: 10px;
+    background-color: #f1e05a;
+    filter: brightness(85%);
+    border-radius: 50%;
+    float:right;
+
+}
+.lang-circle.Other {
+    height: 10px;
+    width: 10px;
+    background-color: #b1b1b1;
+    filter: brightness(85%);
+    border-radius: 50%;
+    float:right;
 }

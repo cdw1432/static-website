@@ -209,25 +209,29 @@ async function getLatestRepos() {
             name: repo.name,
             description: repo.description,
             html_url: repo.html_url,
-            updated_at: repo.updated_at
+            updated_at: repo.updated_at,
+            pushed_at: repo.pushed_at,
+            language: repo.language
         }));
 
         for (let i = 0; i < count; i++) {
-            const dateString = latestRepos[i].updated_at
+            const dateString = latestRepos[i].pushed_at
             const dateObject = new Date(dateString);
 
             const year = dateObject.getFullYear();
             const month = dateObject.getMonth() + 1;
             const day = dateObject.getDate();
 
+            let lang_circle = (latestRepos[i].language == 'Go' || latestRepos[i].language == 'JavaScript') ? latestRepos[i].language : "Other"
             const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
             let list = document.createElement("li")
-            list.innerHTML = `<a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].name}</a><br/>` +
-                `<span id="post-date">updated: ${formattedDate}</span><br/>` +
-                `<span class="repos-tags">${latestRepos[i].description}</span>`
+            list.innerHTML = `<a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].name}</a><span class="lang-circle ${lang_circle}"></span> <br/>` +
+                `<span id="post-date">latest commit: ${formattedDate}</span><br/>` +
+                `<span class="repos-tags"><a>${latestRepos[i].description}</a></span>`
             repos.appendChild(list);
+  
         }
-        console.log(latestRepos);
+
     } catch (error) {
         console.error('Error fetching data:', error);
     }

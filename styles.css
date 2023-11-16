@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
 /* Global */
 body {
     margin: 0px;
@@ -21,6 +22,7 @@ ul {
 ::selection {
     background: rgb(252, 255, 199);
 }
+
 /* Borders */
 #top-border, #bottom-border, #left-border, #right-border {
     background: rgb(41, 6, 58);
@@ -49,19 +51,18 @@ ul {
 #bottom-border {
     bottom: 0;
 }
+
 /* PAGE */
 #page {
     max-width: 1000px;
-    padding: 50px 50px 50px 50px;
-   /* top, right, bottom, left */
+    padding: 50px 50px 50px 50px; /* top, right, bottom, left */
     margin: auto;
     align-content: center;
 }
+
 /* TOP */
 #top {
     margin-bottom: 20px;
-   /* border: solid;
-    */
 }
 header {
     padding: 5px;
@@ -93,6 +94,7 @@ nav a {
 .line-nav, .line-footer {
     border-bottom: solid rgba(32, 32, 32, 0.2) 2px;
 }
+
 /* CONTENT */
 #content {
     overflow-x: hidden;
@@ -103,6 +105,7 @@ nav a {
     font-size: medium;
     padding: 5px;
 }
+
 /* BOTTOM */
 #bottom {
     margin-bottom: 30px;
@@ -118,6 +121,7 @@ footer h3 {
     font-size: 20px;
     text-align: center;
 }
+
 /* less than 800px */
 @media only screen and (max-width: 800px) {
     .line-nav {
@@ -295,6 +299,7 @@ footer h3 {
     cursor: pointer;
     text-decoration: none;
     color: #727171;
+    text-decoration: none;
 }
 /* REPO Language */
 .lang-circle.Go{

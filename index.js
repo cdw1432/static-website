@@ -1,12 +1,16 @@
 const defaultLanguage = "en"
 /* JSON */
 const jsonFilePath = "./json/data.json"
+
 let navItems;
 let nav = document.getElementById("nav")
+
 let matched = document.createElement('matched');
 let unmatched = document.createElement('unmatched');
+
 const mediaQuery = window.matchMedia("(max-width: 800px)");
 
+/* NAV Items */
 function loadJSONData(language) {
     fetch(jsonFilePath)
         .then(response => {
@@ -18,7 +22,6 @@ function loadJSONData(language) {
         .then(jsonData => {
             button.innerHTML = jsonData[`${language}`].icon;
             abttext = jsonData[`${language}`].about;
-            // Extract the links for the selected language
             navItems = jsonData[`${language}`].links;
             //console.log(navItems);
             if (nav.childNodes.length != 0) {
@@ -58,20 +61,29 @@ function loadJSONData(language) {
 }
 loadJSONData(defaultLanguage);
 
+mediaQuery.addEventListener("change", (e) => {
+    if (e.matches) {
+        nav.innerHTML = matched.innerHTML
+    } else {
+        nav.innerHTML = unmatched.innerHTML
+    }
+});
+
 /* FAVICON */
-let moonPhases = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘', '🌑']
+let moonPhases = ['🌑', '🌒', '🌓', '🌔', '🌕','🌕', '🌖', '🌗', '🌘', '🌑']
 const date = new Date();
-const dayOfCycle = Math.floor((date / (1000 * 60 * 60 * 24)) % 29.53058867); //date/(1000*60*60*24), tell us the number of days since the epoch
-const currentMoon = moonPhases[dayOfCycle]; // 29.53058867 is the average length of a lunar month 
-let link = document.querySelector("link[rel~='icon']");
-//console.log(currentMoon);
+const dayOfCycle = ((Math.floor((date / (1000 * 60 * 60 * 24))) % 30) / 3) % 10;    //date/(1000*60*60*24), tell us the number of days since the epoch
+const currentMoon = moonPhases[dayOfCycle];                                         // 29.53058867 is the average length of a lunar month 
+let link = document.querySelector("link[rel~='icon']");                             // but i'm using 30 to make it simple
+//console.log(Math.floor((date / (1000 * 60 * 60 * 24))) % 30, dayOfCycle)
 
 if (!link) {
     link = document.createElement('link');
     link.rel = 'icon';
     document.head.appendChild(link);
 }
-link.href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${currentMoon}</text></svg>`;
+link.href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%221em%22 font-size=%2280%22>${currentMoon}</text></svg>`;
+
 
 /* Headings */
 let h2 = document.querySelector("#h2")
@@ -94,14 +106,7 @@ async function fetchHeadings(language) {
     }
 }
 fetchHeadings(defaultLanguage)
-/* NAV */
-mediaQuery.addEventListener("change", (e) => {
-    if (e.matches) {
-        nav.innerHTML = matched.innerHTML
-    } else {
-        nav.innerHTML = unmatched.innerHTML
-    }
-});
+
 
 /* About */
 let abtme = document.querySelector("#aboutme")
@@ -202,7 +207,7 @@ async function getLatestRepos() {
         const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
         const data = await response.json();
 
-        const sortedRepos = data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        const sortedRepos = data.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
 
         const latestRepos = sortedRepos.slice(0, count).map(repo => ({
@@ -227,7 +232,7 @@ async function getLatestRepos() {
             let list = document.createElement("li")
             list.innerHTML = `<a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].name}</a><span class="lang-circle ${lang_circle}"></span> <br/>` +
                 `<span id="post-date">latest commit: ${formattedDate}</span><br/>` +
-                `<span class="repos-tags"><a>${latestRepos[i].description}</a></span>`
+                `<span class="repos-tags"><a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].description}</a></span>`
             repos.appendChild(list);
   
         }

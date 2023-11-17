@@ -72,10 +72,10 @@ mediaQuery.addEventListener("change", (e) => {
 /* FAVICON */
 let moonPhases = ['🌑', '🌒', '🌓', '🌔', '🌕','🌕', '🌖', '🌗', '🌘', '🌑']
 const date = new Date();
-const dayOfCycle = ((Math.floor((date / (1000 * 60 * 60 * 24))) % 30) / 3) % 10;    //date/(1000*60*60*24), tell us the number of days since the epoch
+const dayOfCycle =  Math.floor(date / (1000 * 60 * 60 * 24) % 30 / 3) % 10;         //date/(1000*60*60*24), tell us the number of days since the epoch
 const currentMoon = moonPhases[dayOfCycle];                                         // 29.53058867 is the average length of a lunar month 
 let link = document.querySelector("link[rel~='icon']");                             // but i'm using 30 to make it simple
-//console.log(Math.floor((date / (1000 * 60 * 60 * 24))) % 30, dayOfCycle)
+console.log(Math.floor((date / (1000 * 60 * 60 * 24))) % 30, dayOfCycle)
 
 if (!link) {
     link = document.createElement('link');
@@ -147,7 +147,7 @@ async function fetchButton(language) {
         const res = await fetch(jsonFilePath)
         const data = await res.json();
         let btnformoreblog = `<a href="https://medium.com/@cdw1432m" target="_blank">${data[language].button.blog}</a>`
-        let btnformorerepo = `<a href="https://github.com/cdw1432" target="_blank">${data[language].button.blog}</a>`
+        let btnformorerepo = `<a href="https://github.com/cdw1432?tab=repositories" target="_blank">${data[language].button.blog}</a>`
         blogButton.innerHTML = btnformoreblog
         repoButton.innerHTML = btnformorerepo
     } catch (err) {

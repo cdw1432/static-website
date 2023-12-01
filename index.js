@@ -75,7 +75,7 @@ const date = new Date();
 const dayOfCycle =  Math.floor(date / (1000 * 60 * 60 * 24) % 30 / 3) % 10;         //date/(1000*60*60*24), tell us the number of days since the epoch
 const currentMoon = moonPhases[dayOfCycle];                                         // 29.53058867 is the average length of a lunar month 
 let link = document.querySelector("link[rel~='icon']");                             // but i'm using 30 to make it simple
-console.log(Math.floor((date / (1000 * 60 * 60 * 24))) % 30, dayOfCycle)
+//console.log(Math.floor((date / (1000 * 60 * 60 * 24))) % 30, dayOfCycle)
 
 if (!link) {
     link = document.createElement('link');
@@ -179,9 +179,10 @@ fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cdw
             const dateString = jsonData.items[i].pubDate
             const dateObject = new Date(dateString);
 
-            const year = dateObject.getFullYear();
-            const month = dateObject.getMonth() + 1;
-            const day = dateObject.getDate();
+            const pstDateObject = new Date(dateObject.getTime() - 8 * 60 * 60 * 1000); //GMT to PST
+            const year = pstDateObject.getFullYear();
+            const month = pstDateObject.getMonth() + 1;
+            const day = pstDateObject.getDate();
 
             const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
 

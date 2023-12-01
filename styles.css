@@ -146,22 +146,20 @@ footer h3 {
 }
 #language {
     display: inline-block;
-    padding: 4px 5px;
-    font-size: 16px;
-    background-color: rgb(246,238,227);
+    margin: auto;
+    padding: 4px 5px 1px 5px;
+    font-size: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 #language > img {
-    width: 15px;
+    width: 17px;
 }
 #language:hover {
     background: rgb(41, 6, 58);
-}
-#language:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 #license {
     color: #777;

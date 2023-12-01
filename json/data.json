@@ -2,14 +2,14 @@
     "kr": {
         "icon" : "<img src='https://emoji.beeimg.com/🇰🇷/apple' alt='🇰🇷'></img>",
         "header2": "소개",
-        "header3": "📮최근 블로그 글:",
-        "header4": "⏳여가시간에 하는 거: ",
-        "about" : "👋안녕하세요. 현재 대학교 2학년 학생입니다. 서버리스, 클라우드, 오픈소스, Go, JavaScript/TypeScript, DBMS, 소프트웨어 개발에 관심있습니다.",
+        "header3": "최근 블로그 글:",
+        "header4": "여가시간에 하는 거: ",
+        "about" : "안녕하세요. 현재 대학교 2학년 학생입니다. 주로 JavaScript/TypeScript, Go로 만들어진 오픈소스 프로젝트에 관심있습니다.",
         "links" : {
             "인스타그램": ["https://www.instagram.com/c6791432/", 1],
             "미디엄": ["https://medium.com/@cdw1432m", 2],
             "깃허브": ["https://github.com/cdw1432", 3],
-            "디스코드": ["https://discord.gg/JbFjBRqD", 4],
+            "디스코드": ["https://discord.gg/swWtU4Qz", 4],
             "유튜브": ["https://www.youtube.com/channel/UC1KUz5HbE_b7aaudwfXXNiQ", 5]
         },
         "button" : {
@@ -19,14 +19,14 @@
     "en": {
         "icon" : "<img src='https://emoji.beeimg.com/🌐/apple' alt='🌐'></img>",
         "header2": "about",
-        "header3": "📮recent blog posts(korean): ",
-        "header4": "⏳things I do or did during my spare time: ",
-        "about": "👋Hello. I am a second-year university student. I'm interested in serverless, cloud, open source, Go, JavaScript/TypeScript, DBMS, and software.",
+        "header3": "recent blog posts(korean): ",
+        "header4": "things I do or did during my spare time: ",
+        "about": "Hello. I am currently a second-year university student. I am interested in open-source projects developed in JavaScript/TypeScript, Go.",
         "links" : {
             "INSTAGRAM": ["https://www.instagram.com/c6791432/", 1],
             "MEDIUM": ["https://medium.com/@cdw1432m", 2],
             "GITHUB": ["https://github.com/cdw1432", 3],
-            "DISCORD": ["https://discord.gg/pxsnKw6Q", 4],
+            "DISCORD": ["https://discord.gg/swWtU4Qz", 4],
             "YOUTUBE": ["https://www.youtube.com/channel/UC1KUz5HbE_b7aaudwfXXNiQ", 5]
         },
         "button" : {

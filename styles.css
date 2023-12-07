@@ -179,8 +179,7 @@ footer h3 {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    max-width: 333px;
-    min-height: 100px;
+    max-width: 400px;
     min-height: 100px;
 }
 #postslist > li > a {
@@ -236,7 +235,7 @@ footer h3 {
 
 }
 /* less than 900px */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
     #repos {
         float: left;
         max-width: 100%;
@@ -264,8 +263,7 @@ footer h3 {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    max-width: 333px;
-    min-height: 100px;
+    max-width: 350px;
     min-height: 100px;
 }
 #post-date {
@@ -304,29 +302,10 @@ footer h3 {
     text-decoration: none;
 }
 /* REPO Language */
-.lang-circle.Go{
+.lang-circle {
     height: 10px;
     width: 10px;
-    background-color: #00ADD8;
-    filter: brightness(85%);
-    border-radius: 50%;
-    float:right;
-
-}
-.lang-circle.JavaScript{
-    height: 10px;
-    width: 10px;
-    background-color: #f1e05a;
-    filter: brightness(85%);
-    border-radius: 50%;
-    float:right;
-
-}
-.lang-circle.Other {
-    height: 10px;
-    width: 10px;
-    background-color: #b1b1b1;
-    filter: brightness(85%);
+    filter: brightness(93%);
     border-radius: 50%;
     float:right;
 }

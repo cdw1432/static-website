@@ -228,11 +228,11 @@ async function getLatestRepos() {
             const month = dateObject.getMonth() + 1;
             const day = dateObject.getDate();
 
-            let lang_circle = (latestRepos[i].language == 'Go' || latestRepos[i].language == 'JavaScript') ? latestRepos[i].language : "Other"
+            let lang_color = findColor(latestRepos[i].language);
             const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
             let list = document.createElement("li")
-            list.innerHTML = `<a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].name}</a><span class="lang-circle ${lang_circle}"></span> <br/>` +
-                `<span id="post-date">latest commit: ${formattedDate}</span><br/>` +
+            list.innerHTML = `<a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].name}</a><span class="lang-circle" style="background-color:${lang_color};"></span> <br/>` +
+                `<span id="post-date">Commits on ${formattedDate}</span><br/>` +
                 `<span class="repos-tags"><a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].description}</a></span>`
             repos.appendChild(list);
   
@@ -243,3 +243,49 @@ async function getLatestRepos() {
     }
 }
 getLatestRepos();
+
+/* language colors */
+let colors = {
+    "C": {
+        "color": "#555555",
+    },
+    "C#": {
+        "color": "#178600",
+    },
+    "C++": {
+        "color": "#f34b7d",
+    },
+    "JavaScript": {
+        "color": "#f1e05a",
+    },
+    "TypeScript": {
+        "color": "#3178c6", 
+    },
+    "Java": {
+        "color": "#b07219",
+    },
+    "Go": {
+        "color": "#00ADD8",
+    },
+    "Vim Script": {
+        "color": "#199f4b",
+    },
+    "Shell": {
+        "color": "#89e051",
+    },
+    "Python": {
+        "color": "#3572A5",
+    },
+}
+
+function findColor(language) {
+    const lowerCaseLanguage = language.toLowerCase();
+
+    for (const lang in colors) {
+        if (lowerCaseLanguage === lang.toLowerCase()) {
+            return colors[lang].color;
+        }
+    }
+
+    return null;
+}

@@ -6,11 +6,9 @@
         "header4": "여가시간에 하는 거: ",
         "about" : "안녕하세요. 현재 대학교 2학년 학생입니다. 주로 JavaScript/TypeScript, Go로 만들어진 오픈소스 프로젝트에 관심있습니다.",
         "links" : {
-            "인스타그램": ["https://www.instagram.com/c6791432/", 1],
-            "미디엄": ["https://medium.com/@cdw1432m", 2],
-            "깃허브": ["https://github.com/cdw1432", 3],
-            "디스코드": ["https://discord.gg/swWtU4Qz", 4],
-            "유튜브": ["https://www.youtube.com/channel/UC1KUz5HbE_b7aaudwfXXNiQ", 5]
+            "미디엄": ["https://medium.com/@cdw1432m", 2,"<i class=\"fa-brands fa-medium\"></i>"],
+            "깃허브": ["https://github.com/cdw1432", 3, "<i class=\"fa-brands fa-github\"></i>"],
+            "디스코드": ["https://discord.gg/UjQ4vmeq", 4, "<i class=\"fa-brands fa-discord\"></i>"]
         },
         "button" : {
             "blog": "더보기"
@@ -23,11 +21,9 @@
         "header4": "things I do or did during my spare time: ",
         "about": "Hello. I am currently a second-year university student. I am interested in open-source projects developed in JavaScript/TypeScript, Go.",
         "links" : {
-            "INSTAGRAM": ["https://www.instagram.com/c6791432/", 1],
-            "MEDIUM": ["https://medium.com/@cdw1432m", 2],
-            "GITHUB": ["https://github.com/cdw1432", 3],
-            "DISCORD": ["https://discord.gg/swWtU4Qz", 4],
-            "YOUTUBE": ["https://www.youtube.com/channel/UC1KUz5HbE_b7aaudwfXXNiQ", 5]
+            "Medium": ["https://medium.com/@cdw1432m", 2,"<i class=\"fa-brands fa-medium\"></i>"],
+            "GitHub": ["https://github.com/cdw1432", 3, "<i class=\"fa-brands fa-github\"></i>"],
+            "Discord":["https://discord.gg/UjQ4vmeq", 4, "<i class=\"fa-brands fa-discord\"></i>"]
         },
         "button" : {
             "blog": "more"

@@ -1,4 +1,4 @@
-const defaultLanguage = "en"
+const defaultLanguage = "kr"
 /* JSON */
 const jsonFilePath = "./json/data.json"
 
@@ -33,7 +33,7 @@ function loadJSONData(language) {
                 const link = document.createElement("a");
                 link.href = navItems[key][0];
                 link.id = `nav${navItems[key][1]}`
-                link.innerHTML = `<span id="navItems">` + key.toLowerCase() + `</span>`;
+                link.innerHTML = `<span id="navItems">` +`${navItems[key][2]}`+ key + `</span>`;
                 link.target = "_blank"
                 unmatched.appendChild(link);
             }
@@ -43,7 +43,7 @@ function loadJSONData(language) {
                 const link = document.createElement("a");
                 link.href = navItems[key][0];
                 link.id = `nav${navItems[key][1]}`
-                link.innerHTML = `<span id="navItems">` + key.toLowerCase() + `</span>`;
+                link.innerHTML = `<span id="navItems">`+ `${navItems[key][2]}` + key +`</span>`;
                 link.target = "_blank"
                 listItem.appendChild(link);
                 ul.appendChild(listItem);
@@ -132,7 +132,7 @@ let language = defaultLanguage;
 let button = document.querySelector("#language")
 
 button.addEventListener("click", function() {
-    language = (defaultLanguage == language) ? "kr" : "en"
+    language = (defaultLanguage == language) ? "en" : "kr"
     loadJSONData(language)
     fetchAbout(language)
     fetchHeadings(language)
@@ -146,8 +146,8 @@ async function fetchButton(language) {
     try {
         const res = await fetch(jsonFilePath)
         const data = await res.json();
-        let btnformoreblog = `<a href="https://medium.com/@cdw1432m" target="_blank">${data[language].button.blog}</a>`
-        let btnformorerepo = `<a href="https://github.com/cdw1432?tab=repositories" target="_blank">${data[language].button.blog}</a>`
+        let btnformoreblog = `<a>${data[language].button.blog}</a>`
+        let btnformorerepo = `<a>${data[language].button.blog}</a>`
         blogButton.innerHTML = btnformoreblog
         repoButton.innerHTML = btnformorerepo
     } catch (err) {
@@ -155,14 +155,24 @@ async function fetchButton(language) {
     }
 }
 fetchButton(defaultLanguage);
-
-
+blogButton.addEventListener("click", function() {
+    for (let i = 0; i < morePostsHTML.childNodes.length; i++) {
+        post.appendChild(morePostsHTML.childNodes[i].cloneNode(true));
+    }
+    blogButton.style.display = 'none';
+});
+repoButton.addEventListener("click", function() {
+    for (let i = 0; i < moreReposHTML.childNodes.length; i++) {
+        repos.appendChild(moreReposHTML.childNodes[i].cloneNode(true));
+    }
+    repoButton.style.display = 'none';
+});
 /* BLOG POSTS */
 let post = document.querySelector("#postslist")
 var myHeaders = new Headers();
 const apiKey = `ggm7kpunjp4tcxh5qbvbdozbydciet524cz526lz`
 const count = 3
-
+let morePostsHTML = document.createElement("div");
 myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
     method: "get",
@@ -171,7 +181,7 @@ var requestOptions = {
 
 };
 
-fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cdw1432m&api_key=${apiKey}&count=${count}`, requestOptions)
+fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cdw1432m&api_key=${apiKey}&count=${count+count}`, requestOptions)
     .then(response => response.json())
     .then(jsonData => {
 
@@ -197,12 +207,37 @@ fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cdw
             post.appendChild(list);
             //console.log(jsonData)
         }
+        //more
+        let till = (jsonData.items.length > (2*count)) ? 2*count : jsonData.items.length
+        for(let i = count; i < till; i++) {
+            const dateString = jsonData.items[i].pubDate
+            const dateObject = new Date(dateString);
+
+            const pstDateObject = new Date(dateObject.getTime() - 8 * 60 * 60 * 1000); //GMT to PST
+            const year = pstDateObject.getFullYear();
+            const month = pstDateObject.getMonth() + 1;
+            const day = pstDateObject.getDate();
+
+            const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+
+            //console.log(formattedDate);
+            let list = document.createElement("li")
+            list.innerHTML = `<a href="${jsonData.items[i].link}" target="_blank">${jsonData.items[i].title}</a><br/>` + `<span id="post-date">${formattedDate}</span><br/>`
+            if (jsonData.items[i].categories.length > 0)
+                for (let j = 0; j < jsonData.items[i].categories.length; j++) {
+                    if (j == 3) break;
+                    list.innerHTML += `<span class="post-tags">${jsonData.items[i].categories[j]}</span>`
+                }
+            morePostsHTML.appendChild(list);
+            //console.log(jsonData)
+        }
     })
     .catch(error => console.log('error', error));
 
 /* GITHUB Repos*/
 const githubUsername = 'cdw1432';
 let repos = document.querySelector('#reposlist');
+let moreReposHTML = document.createElement('div');
 async function getLatestRepos() {
     try {
         const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
@@ -210,8 +245,8 @@ async function getLatestRepos() {
 
         const sortedRepos = data.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
-
-        const latestRepos = sortedRepos.slice(0, count).map(repo => ({
+        let till = (data.length < 2*count) ? data.length : 2*count
+        const latestRepos = sortedRepos.slice(0, till).map(repo => ({
             name: repo.name,
             description: repo.description,
             html_url: repo.html_url,
@@ -219,7 +254,6 @@ async function getLatestRepos() {
             pushed_at: repo.pushed_at,
             language: repo.language
         }));
-
         for (let i = 0; i < count; i++) {
             const dateString = latestRepos[i].pushed_at
             const dateObject = new Date(dateString);
@@ -235,7 +269,22 @@ async function getLatestRepos() {
                 `<span id="post-date">Commits on ${formattedDate}</span><br/>` +
                 `<span class="repos-tags"><a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].description}</a></span>`
             repos.appendChild(list);
-  
+        }
+        for (let i = count; i < till; i++) {
+            const dateString = latestRepos[i].pushed_at
+            const dateObject = new Date(dateString);
+
+            const year = dateObject.getFullYear();
+            const month = dateObject.getMonth() + 1;
+            const day = dateObject.getDate();
+
+            let lang_color = findColor(latestRepos[i].language);
+            const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+            let list = document.createElement("li")
+            list.innerHTML = `<a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].name}</a><span class="lang-circle" style="background-color:${lang_color};"></span> <br/>` +
+                `<span id="post-date">Commits on ${formattedDate}</span><br/>` +
+                `<span class="repos-tags"><a href="${latestRepos[i].html_url}" target="_blank">${latestRepos[i].description}</a></span>`
+            moreReposHTML.appendChild(list);
         }
 
     } catch (error) {

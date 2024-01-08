@@ -1,0 +1,32 @@
+{
+    "kr": {
+        "icon" : "<img src='https://emoji.beeimg.com/🇰🇷/apple' alt='🇰🇷'></img>",
+        "header2": "소개",
+        "header3": "최근 블로그 글:",
+        "header4": "여가시간에 하는 거: ",
+        "about" : "안녕하세요. 현재 대학교 2학년 학생입니다. 주로 JavaScript/TypeScript, Go로 만들어진 오픈소스 프로젝트에 관심있습니다.",
+        "links" : {
+            "미디엄": ["https://medium.com/@cdw1432m", 2,"<i class=\"fa-brands fa-medium\"></i>"],
+            "깃허브": ["https://github.com/cdw1432", 3, "<i class=\"fa-brands fa-github\"></i>"],
+            "디스코드": ["https://discord.gg/8UYNtFS8Uk", 4, "<i class=\"fa-brands fa-discord\"></i>"]
+        },
+        "button" : {
+            "blog": "더보기"
+        }
+    },
+    "en": {
+        "icon" : "<img src='https://emoji.beeimg.com/🌐/apple' alt='🌐'></img>",
+        "header2": "about",
+        "header3": "recent blog posts(korean): ",
+        "header4": "things I do or did during my spare time: ",
+        "about": "Hello. I am currently a second-year university student. I am interested in open-source projects developed in JavaScript/TypeScript, Go.",
+        "links" : {
+            "Medium": ["https://medium.com/@cdw1432m", 2,"<i class=\"fa-brands fa-medium\"></i>"],
+            "GitHub": ["https://github.com/cdw1432", 3, "<i class=\"fa-brands fa-github\"></i>"],
+            "Discord":["https://discord.gg/8UYNtFS8Uk", 4, "<i class=\"fa-brands fa-discord\"></i>"]
+        },
+        "button" : {
+            "blog": "more"
+        }
+    }
+}

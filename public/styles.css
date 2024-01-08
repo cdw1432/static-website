@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+/* Global */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 22px;
+    color: #242323;
+    background-color: rgb(246,238,227);
+}
+
+div {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+::selection {
+    background: rgb(252, 255, 199);
+}
+
+/* Borders */
+#top-border, #bottom-border, #left-border, #right-border {
+    background: rgb(41, 6, 58);
+    position: fixed;
+    z-index: 100;
+}
+#left-border, #right-border {
+    top: 0;
+    bottom: 0;
+    width: 15px;
+}
+#left-border {
+    left: 0;
+}
+#right-border {
+    right: 0;
+}
+#top-border, #bottom-border {
+    left: 0;
+    right: 0;
+    height: 15px;
+}
+#top-border {
+    top: 0;
+}
+#bottom-border {
+    bottom: 0;
+}
+
+/* PAGE */
+#page {
+    max-width: 1000px;
+    padding: 50px 50px 50px 50px; /* top, right, bottom, left */
+    margin: auto;
+    align-content: center;
+}
+
+/* TOP */
+#top {
+    margin-bottom: 20px;
+}
+header {
+    padding: 5px;
+}
+nav {
+    letter-spacing: 2px;
+    padding: 3px 3px;
+    font-size: 15px;
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    border: none;
+}
+#nav2 {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+#nav3 {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+#nav4 {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.line-nav, .line-footer {
+    border-bottom: solid rgba(32, 32, 32, 0.2) 2px;
+}
+
+/* CONTENT */
+#content {
+    overflow-x: hidden;
+    clear: both;
+    margin-bottom: 30px;
+}
+#main {
+    font-size: medium;
+    padding: 5px;
+}
+
+/* BOTTOM */
+#bottom {
+    margin-bottom: 30px;
+}
+footer {
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+    border-bottom: none;
+}
+footer h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* less than 800px */
+@media only screen and (max-width: 800px) {
+    .line-nav {
+        display: none;
+   }
+    nav {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 15px;
+   }
+    nav a {
+        text-decoration: none;
+        color: #333;
+        border: none;
+        padding: 0;
+        margin-top: 10px;
+        display: inline-block;
+   }
+    #navItems {
+        display: block;
+   }
+}
+#language {
+    display: inline-block;
+    margin: auto;
+    padding: 4px 5px 1px 5px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#language > img {
+    width: 17px;
+}
+#language:hover {
+    background: rgb(41, 6, 58);
+}
+#license {
+    color: #777;
+    opacity: 0.8;
+    font-size: 12px;
+    text-decoration: none;
+}
+#aboutme {
+    font-size: 25px;
+    text-align: center;
+}
+#postslist > li {
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
+    background-color: rgb(246,238,227);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    min-height: 100px;
+}
+#postslist > li > a {
+    font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
+}
+.post-tags {
+    padding: 2px;
+    margin: 3px;
+    font-size: 13px;
+    display: inline-block;
+    background-color: #dbdbdb;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #727171;
+}
+#post-date {
+    color: #5f5f5f;
+}
+#postslist > li > a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+    padding: 12px 0 12px 0;
+}
+#postslist > li > a:hover {
+    text-decoration: underline;
+}
+#moreblog {
+    background-color: rgb(246,238,227);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #727171;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#moreblog > a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #575555;
+    padding: 10px 0 10px 0;
+}
+#repos, #posts {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 50%;
+    min-width: 400px;
+}
+#repos {
+    float: right;
+
+}
+/* less than 900px */
+@media only screen and (max-width: 960px) {
+    #repos {
+        float: left;
+        max-width: 100%;
+        min-width: 100%;
+   }
+    #posts {
+        max-width: 100%;
+        min-width: 100%;
+   }
+}
+#morerepos {
+    margin-right:110px;
+}
+#morerepos > a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #575555;
+    padding: 10px 0 10px 0;
+}
+#reposlist > li {
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
+    background-color: rgb(246,238,227);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 350px;
+    min-height: 100px;
+}
+#post-date {
+    color: #5f5f5f;
+}
+#reposlist > li > a {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+    padding: 12px 0 12px 0;
+    font-weight: bold;
+}
+#reposlist > li > a:hover {
+    text-decoration: underline;
+}
+#morerepos {
+    background-color: rgb(246,238,227);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #727171;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.repos-tags > a {
+    padding: 2px;
+    margin-top: 5px;
+    font-size: 17px;
+    display: inline-block;
+    background-color: #dbdbdb;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #727171;
+    text-decoration: none;
+}
+/* REPO Language */
+.lang-circle {
+    height: 10px;
+    width: 10px;
+    filter: brightness(93%);
+    border-radius: 50%;
+    float:right;
+}

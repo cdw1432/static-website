@@ -8,7 +8,7 @@
         "links" : {
             "미디엄": ["https://medium.com/@cdw1432m", 2,"<i class=\"fa-brands fa-medium\"></i>"],
             "깃허브": ["https://github.com/cdw1432", 3, "<i class=\"fa-brands fa-github\"></i>"],
-            "디스코드": ["https://discord.gg/UjQ4vmeq", 4, "<i class=\"fa-brands fa-discord\"></i>"]
+            "디스코드": ["https://discord.gg/8UYNtFS8Uk", 4, "<i class=\"fa-brands fa-discord\"></i>"]
         },
         "button" : {
             "blog": "더보기"
@@ -23,7 +23,7 @@
         "links" : {
             "Medium": ["https://medium.com/@cdw1432m", 2,"<i class=\"fa-brands fa-medium\"></i>"],
             "GitHub": ["https://github.com/cdw1432", 3, "<i class=\"fa-brands fa-github\"></i>"],
-            "Discord":["https://discord.gg/UjQ4vmeq", 4, "<i class=\"fa-brands fa-discord\"></i>"]
+            "Discord":["https://discord.gg/8UYNtFS8Uk", 4, "<i class=\"fa-brands fa-discord\"></i>"]
         },
         "button" : {
             "blog": "more"
